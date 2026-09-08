@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>链接伪类选择器</title>
+    <style>
+        /* 1. a:link  未访问的链接 把没有点击过的（访问过的）链接选出来 */
+        a:link {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* a：visited 选择点击过的（访问过的）链接 */
+        a:visited {
+            color: #e6ff01;
+        }
+
+        /* 3.a:hover 选择鼠标经过的那个链接 */
+        a:hover {
+            color: rgb(15, 137, 207);
+        }
+
+        /* 4.a:active 选择的是我们鼠标正在按下还没有弹起鼠标的那个链接 */
+        a:active {
+            color: rgb(37, 168, 59);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">小猪佩奇</a>
+    <a href="http://xxxxxxxx.com">未知网站</a>
+</body>
+
+</html>

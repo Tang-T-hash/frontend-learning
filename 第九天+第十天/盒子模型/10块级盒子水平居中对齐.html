@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>块级盒子水平居中</title>
+    <style>
+        .header {
+            width: 900px;
+            height: 200px;
+            background-color: pink;
+            /* margin: auto; 
+            margin-left: auto;margin-right: auto; 下面那种 margin: 0 auto;最常用*/
+            /* 以下方是让块级元素水平居中，让行内元素或者行内块元素水平居中给其父元素添加 text-align：center 即可 */
+            margin: 100px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <span>里面的文字</span>
+    </div>
+    <div class="header">
+        <img src="王者荣耀.webp">
+    </div>
+</body>
+
+</html>

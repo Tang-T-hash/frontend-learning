@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            width: 234px;
+            height: 300px;
+            border: transparent 1px solid;
+            background-color: #fff;
+            margin: 100px;
+            /* 1.怎么让照片水平居中：给父盒子加 text-align: center
+            text-align: center;*/
+        }
+
+        a {
+            color: #333333;
+            text-decoration: none;
+        }
+
+        /* 2.把 img 转成 块级元素 display: block;，然后用 margin: 0 auto：*/
+        .box img {
+            width: 160px;
+            height: 160px;
+            display: block;
+            padding: 0px 20px;
+        }
+
+        .review {
+            height: 20px;
+            font-size: 14px;
+            color: #333333;
+            margin: 0px 10px 2px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .app {
+            font-size: 12px;
+            color: #b0b0b0;
+            text-align: center;
+            margin: 0px 10px 10px 10px;
+            font-weight: 400;
+        }
+
+        .price {
+            font-size: 14px;
+            color: #ff6700;
+            text-align: center;
+            margin: 0px 10px 14px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"><img src="images/1.webp" alt="">
+        <h2 class="review"><a href="#" target="_blank">REDMI Note 17 Pro</a></h2>
+        <p class="app">抗摔 防水 长续航</p>
+        <p class="price">1599元起</p>
+    </div>
+</body>
+
+</html>

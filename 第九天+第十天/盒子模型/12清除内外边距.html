@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除内外边距</title>
+    <style>
+        /* 这句话是我们 CSS 的第一行代码 清除内外边距 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        span {
+            background-color: pink;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    123
+    <ul>
+        <li>牛来</li>
+    </ul>
+    <span>行内元素尽量只设置左右的内外边距,设置了上下的也没有用 </span>
+</body>
+
+</html>
