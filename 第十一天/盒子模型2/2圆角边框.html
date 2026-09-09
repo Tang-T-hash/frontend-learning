@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圆角边框</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        div {
+            /* 正方形，边长的一半为半径 得到一个圆 */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* border-radius: 100px;
+            50%就是宽和高的一半 */
+            border-radius: 50%;
+        }
+
+        p {
+            /* 圆角矩形设置为高度的一半 */
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+            border-radius: 50px;
+        }
+
+        span {
+            /* 3.设置不同的圆角 顺时针 */
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border-radius: 10px 20px 30px 40px;
+        }
+    </style>
+</head>
+
+<body>
+    1.圆形的做法
+    <div></div>
+    2圆角矩形的做法
+    <p></p>
+    3.设置不同的 圆角<br />
+    <span></span>
+</body>
+
+</html>
