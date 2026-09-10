@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            position: relative;
+            width: 1500px;
+            height: 569px;
+            background-color: pink;
+            margin: auto;
+        }
+
+        img {
+            width: 1500px;
+            height: 568px;
+        }
+
+        .left,
+        .right {
+            position: absolute;
+            top: 50%;
+            margin-top: -16px;
+            width: 32px;
+            height: 32px;
+            background-color: rgba(172, 137, 137, 0.3);
+            text-align: center;
+            line-height: 32px;
+            text-decoration: none;
+            color: rgb(61, 229, 229);
+        }
+
+        .left {
+            left: 0;
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+
+        .right {
+            right: 0;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+
+        .promo {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            margin-left: -60px;
+            width: 120px;
+            height: 13px;
+            background-color: rgba(255, 255, 255, .3);
+            border-radius: 7px;
+        }
+
+        .promo li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            background-color: #e9dbdb;
+            border-radius: 50%;
+            margin-left: 13px;
+            margin-top: 3px;
+        }
+
+        .promo .promo1:hover {
+            background-color: #ffee00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"><img src="images/tb.png" alt=""><a href="#" class="left"> &lt;</a>
+        <a href="#" class="right"> &gt;</a>
+        <ul class="promo">
+            <li class="promo1"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>

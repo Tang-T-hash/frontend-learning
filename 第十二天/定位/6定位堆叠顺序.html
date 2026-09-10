@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位堆叠顺序</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .xiongda {
+            z-index: 1;
+            background-color: rgb(128, 0, 255);
+        }
+
+        .xionger {
+            /* 数值越大就越靠上面 */
+            z-index: 2;
+            background-color: green;
+            left: 50px;
+            top: 50px;
+        }
+
+        .guangtouqiang {
+            background-color: red;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box xiongda">熊大</div>
+    <div class="box xionger">熊二</div>
+    <div class="box guangtouqiang">光头强</div>
+</body>
+
+</html>

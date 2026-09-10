@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位-父亲有定位</title>
+    <style>
+        .grand {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            background-color: purple;
+        }
+
+        .father {
+            /* position: relative; */
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+        }
+
+        .son {
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grand">
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
