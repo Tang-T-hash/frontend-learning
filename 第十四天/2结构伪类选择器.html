@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器</title>
+    <style>
+        /* 选择第一个小li */
+        .ul1 li:first-child {
+            color: blue;
+        }
+
+        /* 选择最后一个小li */
+        .ul1 li:last-child {
+            color: blue;
+        }
+
+        /* 选择第四个小li */
+        .ul1 li:nth-child(4) {
+            color: rgb(0, 60, 255);
+        }
+
+        /* 选择奇数个元素  */
+        /* .ul2 li:nth-child(odd) {
+            color: rgb(0, 183, 255);
+        } */
+
+        /* 选择偶数个元素  */
+        /* .ul2 li:nth-child(even) {
+            color: rgb(21, 255, 0);
+        } */
+
+        /* 选择3的倍数个元素 */
+        /* .ul2 li:nth-child(3n) {
+            color: chocolate; 
+             }*/
+
+        /* 选择第三个以后的 */
+        /* .ul2 li:nth-child(n+3) {
+            color: yellow;
+        } */
+        /* 选择第三个以前的 */
+        .ul2 li:nth-child(-n+3) {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="ul1">
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+        <li>第6个</li>
+        <li>第7个</li>
+        <li>第8个</li>
+    </ul>
+    <ul class="ul2">
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+        <li>第6个</li>
+        <li>第7个</li>
+        <li>第8个</li>
+    </ul>
+</body>
+
+</html>

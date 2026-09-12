@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>背景渐变</title>
+  <style>
+    .box {
+      width: 400px;
+      height: 200px;
+      /* background-color: pink; */
+      /* background: linear-gradient(to top, pink, red); */
+      /* 从上开始顺时针转 90deg 就是从上顺时针转了90度到水平方向 从左 指向右 */
+      /* background: linear-gradient(90deg, pink, red); */
+      /* 位置是色标的位置 */
+      background: linear-gradient(180deg, #3ecec5d8 0%, #26bcc6 100%);
+    }
+
+    p {
+      /* color: #000000; */
+      font-size: 40px;
+      font-weight: 700;
+      /* 渐变背景文字 */
+      background: linear-gradient(97deg, #0894ff 0%, #c959dd 34%, #ff2e54 68%, #ff9004);
+
+      /* -webkit- 前缀 谷歌浏览器老版本的兼容性 */
+      -webkit-background-clip: text;
+
+      /* 背景裁剪 以文字的形式显示 */
+      background-clip: text;
+      /* 文字颜色 透明 */
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <p>为 Apple 智能预备好牛来牛来牛来</p>
+  <button>点击</button>
+</body>
+
+</html>

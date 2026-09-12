@@ -1,0 +1,214 @@
+/* normalize.css v8.0.1 — 统一浏览器默认样式，放在自己的CSS之前引入 */
+
+/* html根元素：统一行高，禁止iOS/IE文字自动放大 */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* body：清除默认的8px外边距 */
+body {
+  margin: 0;
+}
+
+/* main标签：HTML5新标签，IE中默认是inline，改为block */
+main {
+  display: block;
+}
+
+/* h1标题：统一字号和外边距 */
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+/* hr分割线：修复box-sizing和高度计算 */
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+/* pre代码块：统一等宽字体 */
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* a超链接：清除IE点击后残留的背景色 */
+a {
+  background-color: transparent;
+}
+
+/* abbr缩写：统一下划线样式 */
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/* b/strong加粗：统一字重 */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* code/kbd/samp代码类标签：统一等宽字体 */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* small小号文字：统一为父元素的80% */
+small {
+  font-size: 80%;
+}
+
+/* sub/sup上下标：统一字号和位置 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+/* 下标下移 */
+sup {
+  top: -.5em;
+}
+
+/* 上标上移 */
+
+/* img图片：清除IE中的默认边框 */
+img {
+  border-style: none;
+}
+
+/* 表单控件组：统一字体继承、行高、外边距 */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* button/input：修复Edge/IE的overflow问题 */
+button,
+input {
+  overflow: visible;
+}
+
+/* button/select：统一text-transform，不再自动大写 */
+button,
+select {
+  text-transform: none;
+}
+
+/* 各种按钮：重置iOS Safari的系统默认外观 */
+[type=button],
+[type=reset],
+[type=submit],
+button {
+  -webkit-appearance: button;
+}
+
+/* Firefox按钮：清除内部焦点边框 */
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Firefox按钮：统一聚焦虚线轮廓 */
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* fieldset表单分组：设置合理的padding */
+fieldset {
+  padding: .35em .75em .625em;
+}
+
+/* legend图例：修复box-sizing和文字换行 */
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+/* progress进度条：统一垂直对齐 */
+progress {
+  vertical-align: baseline;
+}
+
+/* textarea多行文本框：IE默认永远有滚动条，改为按需显示 */
+textarea {
+  overflow: auto;
+}
+
+/* checkbox/radio复选框单选框：修复box-sizing */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* number输入框：修复上下箭头高度 */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* search搜索框：重置Safari特殊外观 */
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* 文件上传按钮：让它能继承字体 */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/* details/summary折叠元素：HTML5新标签修复 */
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+/* template模板标签：默认隐藏 */
+template {
+  display: none;
+}
+
+/* [hidden]隐藏属性：兼容旧浏览器 */
+[hidden] {
+  display: none;
+}

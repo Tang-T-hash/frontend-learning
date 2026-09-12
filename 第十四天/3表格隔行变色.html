@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格隔行变色</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .data {
+            /* 合并相邻边框 */
+            border-collapse: collapse;
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 14px;
+            border: 1px solid rgb(13, 111, 224);
+        }
+
+        .data tr {
+            height: 35px;
+        }
+
+
+
+        /* 让奇数行改为隔行变色  背景颜色 */
+        .data tr:nth-child(odd) {
+            background-color: #f0e8e8;
+        }
+
+        /* 鼠标经过  背景色 */
+        .data tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* 第一行  换背景色 */
+        /* 隔行变色  背景色 */
+        /* 鼠标经过  背景色 */
+
+        /* 表格第一行 */
+        .data tr:first-child {
+            background-color: rgb(0, 102, 255);
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <table class="data">
+        <tr>
+            <th>姓名</th>
+            <th>数据</th>
+            <th>日期</th>
+        </tr>
+        <tr>
+            <td>姚明</td>
+            <td>10分</td>
+            <td>2002年10月31日</td>
+        </tr>
+        <tr>
+            <td>姚明</td>
+            <td>10分</td>
+            <td>2002年10月31日</td>
+        </tr>
+        <tr>
+            <td>姚明</td>
+            <td>10分</td>
+            <td>2002年10月31日</td>
+        </tr>
+        <tr>
+            <td>姚明</td>
+            <td>10分</td>
+            <td>2002年10月31日</td>
+        </tr>
+        <tr>
+            <td>姚明</td>
+            <td>10分</td>
+            <td>2002年10月31日</td>
+        </tr>
+        <tr>
+            <td>姚明</td>
+            <td>10分</td>
+            <td>2002年10月31日</td>
+        </tr>
+        <tr>
+            <td>姚明</td>
+            <td>10分</td>
+            <td>2002年10月31日</td>
+        </tr>
+        <tr>
+            <td>姚明</td>
+            <td>10分</td>
+            <td>2002年10月31日</td>
+        </tr>
+    </table>
+</body>
+
+</html>

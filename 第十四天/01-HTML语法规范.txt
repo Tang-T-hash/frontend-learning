@@ -1,5 +1,33 @@
 ****************************************第一天********************************************
 
+
+ * {
+      margin: 0;           清除所有元素的margin
+      padding: 0;          清除所有元素的padding
+      box-sizing: border-box    同时设置盒模型
+    }
+
+重置列表样式
+    ul, ol {
+    list-style: none;      去除列表样式
+   }
+
+重置链接样式
+    a {
+    text-decoration: none;        去除下划线
+   }
+
+   最佳重置
+   <!-- ⬇️ 引入 normalize.css，放在style上面！ -->
+  <link rel="stylesheet" href="./normalize.css">
+
+  或者联网情况下直接输入这个：（最新版）
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+
+
+
+
 快捷键
 
 1.快捷复制一行 ：         鼠标放在那一行 shift+alt+下（上）方向键
@@ -646,7 +674,9 @@ ul,div{样式声明}
 
 a:link             /*选择所有未被访问的链接*/
 a:visited          /*选择所有已被访问的链接*/
+
 a:hover            /*选择鼠标指针位于其上的链接*/
+
 a:active            /*选择活动链接（鼠标按下未弹起的链接）*/
 
 链接伪类选择器注意事项
@@ -1521,7 +1551,168 @@ gap: 20px 30px；行间距 是 20 像素，列间距 是30 像素。
 注意：gap是写到父元素(容器身上)
 
 
-.box .item:nth-child(odd)
-odd 奇数
-even 偶数
-3    选第三个
+
+
+第十四天**********************************************************
+
+用户行为伪类
+
+用户 以某种方式和文档 交互 的时候应用，这些用户行为 伪类，有时叫做 动态伪类
+
+使用场景:
+1.鼠标 经过元素的时候，修改 样式。
+2.表单 获得 焦点(鼠标点击)的时候
+
+
+结构伪类选择器
+
+动态伪类         作用  
+:hover         鼠标经过元素
+:focus         获得焦点的元素（表单）
+
+
+根据元素的位置选择目标元素。
+
+使用场景:                  作用
+
+:first-child          一组兄弟元素中的 第一个元素
+:last-child           一组兄弟元素中的 最后一个元素
+
+:nth-child(n)         一组兄弟元素列表中 第n个元素（n从0开始取）
+n = odd                奇数
+n = even               偶数
+n = 3n                 3的倍数（第3，6，9......）
+n = n + 2              第二个及以后的元素
+n = -n + 3             前面三个元素 
+
+
+表单伪类选择器
+
+使用场景：
+1.表单按钮禁用的时候，调整颜色
+2.复选框选中修改样式
+
+表单伪类         作用
+:disabled       表单禁用（变暗那种）
+:checked        选中状态，单选复选按钮
+          禁用
+ button:disabled {
+      background-color: #b8a7a7;
+    }
+
+      选中
+button:checked {
+      background-color: #ff6900;
+    }
+...
+<button disabled>注册</button>
+
+/* 去掉 按钮默认的边框 */
+      border: none;
+
+
+
+伪元素选择器
+
+选择元素的特定部分（使用::）
+
+使用场景：
+1.让表单里面的placholder文字变颜色
+2.做很多的修饰效果
+
+1.选定特定部分
+伪元素选择器        作用
+::first-line       选择 首行
+::first-letter     首 字母
+::placeholder      选择input或者texttarea占位符
+
+选择元素的特定部分（使用双冒号::）
+2.插入内容
+::before            元素内插入伪元素，作为第一个元素
+::after             元素内插入伪元素，作为最后一个元素
+
+比如：
+
+ textarea::placeholder {
+      color: rgb(7, 197, 93);
+      font-size: 14px;
+    }
+...
+<textarea name="" id="" placeholder="请您留言"></textarea>
+
+.box::before {
+      content: "开始";
+    }
+    .box::after {
+      content: "结束";
+    }
+....
+<div class="box"></div>
+
+属性选择器
+
+属性选择器                作用
+[属性]                   选择包含属性
+[属性 = 值]              选择属性等于值   完全匹配
+[属性 ^= 值]             选择属性值以xx开头
+[属性 $= 值]             选择属性值以xx结尾
+[属性 *= 值]              选择属性值包含xx
+
+ /* 点击text，passw时那个外边框 去掉轮廓线 */
+      outline: none;
+
+ /* 合并相邻边框 */
+   border-collapse: collapse;
+
+   背景渐变                        方位
+      background: linear-gradient(to right, #3ecec5d8 0%, #26bcc6 100%);
+                                        度数
+      background-image: linear-gradient(180deg, #3ecec5d8 0%, #26bcc6 100%);
+
+文字渐变
+ background: linear-gradient(97deg, #0894ff 0%, #c959dd 34%, #ff2e54 68%, #ff9004);
+-webkit-background-clip: text;        /* -webkit- 前缀 谷歌浏览器老版本的兼容性 */
+background-clip: text;                   /* 背景裁剪 以文字的形式显示 */
+-webkit-text-fill-color: transparent;         /* 文字颜色 透明 */
+
+（缺一不可）
+
+          径向渐变
+1.圆 显式半径 通常使用 长度；椭圆 可以使用 长度 或 百分比。
+2.at 用来指定渐变中心点。默认是 center
+                            圆形    
+background: radial-gradient(circle, #fff, #000);
+                       写一个长度，默认是圆半径
+background: radial-gradient(100px, red, blue);      /* 圆 */
+                            椭圆
+background: radial-gradient(ellipse, #fff, #000);
+                       两个长度默认是椭圆
+background: radial-gradient(100px 50px, red, blue); /* 椭圆 */
+
+transition 过渡
+当某个 CSS 属性的值发生变化时，让这个变化在一段时间内  平滑 完成，而 不是 瞬间跳变
+
+需要 触发，如 :hover、:focus、class 切换
+
+transition: 属性          持续时间  缓动方式 延迟时间;
+transition: background-color 0.3s ease 0.1s;
+
+语法：  （写到盒子上，谁做过渡给谁加）
+.box {
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s ease-in-out,
+    background-color 0.5s linear 0.1s;
+}
+
+linear：匀速
+ease：默认，先快后慢
+ease-in：慢速开始
+ease-out：慢速结束
+ease-in-out：慢速开始和结束
+cubic-bezier()：自定义贝塞尔曲线
+steps()：分步过渡，适合逐帧效果
+
+
+********************grid网格布局******************
+

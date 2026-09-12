@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表单伪类选择器</title>
+  <style>
+    /* 按钮的背景颜色 #ff6900 */
+    button {
+      width: 150px;
+      height: 40px;
+      background-color: #ff6900;
+      /* 去掉按钮默认的边框 */
+      border: none;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    /* 表单禁用 伪类选择器 */
+    button:disabled {
+      background-color: #b8a7a7;
+    }
+
+    /* 选中状态 单选复选按钮*/
+    /* button:checked {
+      background-color: #ff6900;
+    } */
+  </style>
+</head>
+
+<body>
+  <button disabled>注册</button>
+  <br>
+  <input type="checkbox" id="agree">
+  <label for="agree">同意协议</label>
+
+</body>
+
+</html>

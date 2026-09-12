@@ -1364,3 +1364,40 @@ top:8Opx  }
 
 
 如果一个盒子既有 left 属性又有 right 属性，则默认会执行left属性  同理  top  bottom  会执行top
+
+
+元素的显示与隐藏***********************************
+
+1. display属性
+display属性用于设置一个元素应可见还是隐藏
+display：none ; 隐藏对象
+display :block；除了 转换 为 块级元素之外，同时还有 显示元素的意思
+
+display 隐藏元素后，不再 占有原来的位置
+
+后面应用及其广泛，搭配JS可以做很多的网页特效
+
+
+2. visibility 可见性
+visibility属性用于指定一个元素应 可见 还是 隐藏。
+visibility : visible；元素 可视
+visibility: hidden; 元素 隐藏
+
+visibility隐藏元素后，继续 占有 原来的位置
+
+如果 隐藏元素 想要 原来位置，就用 visibility：hidden
+如果 隐藏元素 不想要 原来位置，就用 display: none
+
+
+3.overflow 溢出
+overflow属性指定了如果内容 溢出 一个元素的框（超过其指定高度及宽度）时，会发生什么。
+
+属性值                 描述
+
+visible                不减切 内容也 不添加 滚动条
+hidden                 不显示 超过 对象尺寸的内容，超出的部分 隐藏掉
+scroll                 不管 超出内容否，总是显示 滚动条
+auto                   超出 自动显示 滚动条，不超出 不显示滚动条
+
+一般情况下，我们都 不想让 溢出的内容显示出来，因为溢出的部分会影响布局。
+但是如果有定位的盒子，请慎角 overflow:hidden 因为它会 隐藏多余的部分。（比如子绝父相那个定位）
