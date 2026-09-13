@@ -26,13 +26,21 @@
         }
 
         .box .item {
-            /* width: 80px; */
+            width: 80px;
             /* flex: 1; */
+
+            /* flex: 0 0 16.66666% 是 flex-grow、flex-shrink、flex-basis 的简写：
+   - flex-grow: 0 — 元素不会在主轴方向上放大占据多余空间
+   - flex-shrink: 0 — 元素不会在空间不足时缩小
+   - flex-basis: 16.66666% — 元素的基础尺寸为容器宽度的约 1/6（100% ÷ 6 ≈ 16.66666%）
+   整体效果：每个 item 固定占据一行中的六分之一宽度，不伸缩 */
             flex: 0 0 16.66666%;
             height: 120px;
             background-color: transparent;
             margin-bottom: 16px;
+
             /* margin-right: 16px; */
+
             padding: 0 8px;
         }
 
@@ -54,48 +62,63 @@
 <body>
     <div class="w">
         <div class="box">
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
             <div class="item">
                 <div class="content"></div>
             </div>
+
         </div>
     </div>
     <div class="footer"></div>

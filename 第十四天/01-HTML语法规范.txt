@@ -26,6 +26,13 @@
 
 
 
+文字渐变
+
+ background: linear-gradient(97deg, #0894ff 0%, #c959dd 34%, #ff2e54 68%, #ff9004);
+-webkit-background-clip: text;       
+background-clip: text;                  
+-webkit-text-fill-color: transparent;     
+
 
 
 快捷键
@@ -1715,4 +1722,51 @@ steps()：分步过渡，适合逐帧效果
 
 
 ********************grid网格布局******************
+
+
+绘制网格：（网格轨道）
+grid-template-columns 定义网格中的 列
+grid-template-rows 定义网格中的 行
+
+属性值:
+有几个属性值代表 创建几列/行
+长度单位比如 100px
+
+grid-template-columns: 200px 200px 200px;
+/*定义三列，每列宽度为 200px */
+grid-template-rows:28θpx 28θpx 28θpx;
+定义三行，每行高度为 200px */
+
+
+ justify-content 是控制 列 轨道（Column Tracks）在容器内水平分布。
+ align-content 是控制 行 轨道（Row Tracks）在容器内水平分布。
+
+   网格间距
+语法：
+gap: 20px；行 和 列 之间保持20像素间隙。
+gap: 20px 30px；行 间距是20像素，列 间距是30像素。
+注意：gap是简写形式也可以分开写
+column-gap: 30px;
+row-gap: 20px;
+
+
+网格轨道
+repeat()函数
+
+语法:
+repeat(次数，轨道尺寸）或 repeat(自动填充，轨道尺寸)
+
+2.自动填充：适用于 响应式布局中 “ 列数随容器宽度变化 ” 的场景。
+
+auto-fill：尽可能多地 创建列。
+auto-fit：尽可能拉伸列 填满 容器（会 合并空白，列宽不小于 minmax的最小值)
+
+区别：当容器空间远远大于所有子元素大小
+1.auto-fill留有 空白 间。
+2.auto-fit会 拉伸 盒子占满 父容器空间。
+
+minmax()函数
+语法:
+minmax(最小值,最大值)
+minmax(200px, 1fr)
 
