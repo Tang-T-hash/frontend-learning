@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>1. 视频标签</h1>
+  <!-- 如果属性的键和值相同，可以省略值写。 -->
+  <!-- <video src="./media/ultra_2_2.mp4" width="500" controls="controls"></video> -->
+  <!-- 想要自动播放，需要 先静音 -->
+  <!-- <video src="./media/ultra_2_2.mp4" width="500" controls autoplay muted loop></video> -->
+
+  <!-- <video src="./media/ultra_2_2.mp4" width="500" controls muted loop poster="./media/home.jpg"></video> -->
+  <!-- 兼容性写法 -->
+  <video width="500" controls autoplay muted loop>
+    <source src="./media/ultra_2_2.mp4" type="video/mp4">
+    <p>您的浏览器不支持 video 标签。</p>
+  </video>
+
+
+  <h1>2. 音频标签</h1>
+  <!-- 音频浏览器不让自动播放 -->
+  <audio src="./media/M800001adt932e1DNA (1).mp3" controls autoplay muted></audio>
+  <!-- 兼容性写法 -->
+  <audio>
+    <source src="./media/M800001adt932e1DNA (1).mp3" type="audio/mpeg">
+    <p>您的浏览器不支持 audio 标签。</p>
+  </audio>
+</body>
+
+</html>

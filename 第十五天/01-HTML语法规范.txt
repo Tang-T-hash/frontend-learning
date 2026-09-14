@@ -1772,8 +1772,14 @@ minmax(200px, 1fr)
 
 照片那里
 object-position : center; /* 默认，裁四周，保留中心 */
- object-position : top; /* 保留顶部，裁底部 */
-  object-position : bottom; /* 保留底部，裁顶部 */
-   object-position : left; /* 保留左侧，裁右侧 */
-    object-position : right; /* 保留右侧，裁左侧 */
-     object-position : 30% 70% ; /* 精确：距左 30%，距上 70% 的位置对齐
+object-position : top; /* 保留顶部，裁底部 */
+object-position : bottom; /* 保留底部，裁顶部 */
+object-position : left; /* 保留左侧，裁右侧 */
+object-position : right; /* 保留右侧，裁左侧 */
+object-position : 30% 70% ; /* 精确：距左 30%，距上 70% 的位置齐
+
+
+
+************第十五天************************************
+
+CSS变量**************************

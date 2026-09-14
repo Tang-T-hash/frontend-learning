@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --bgc: blue;
+      --fz: 60px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .footer {
+      --color: yellow;
+    }
+
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: var(--bgc);
+      color: var(--color);
+      font-size: var(--fz);
+      text-align: center;
+      line-height: 500px;
+    }
+
+    .box .nav {
+      width: 100px;
+      height: 50px;
+      /* background-color: var(--bgc); */
+    }
+
+    .footer:hover {
+      background-color: var(--bgc);
+      color: var(--color);
+      font-size: var(--fz);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">牛来
+    <div class="nav"></div>
+  </div>
+  <div class="footer">
+    牛逼
+  </div>
+</body>
+
+</html>

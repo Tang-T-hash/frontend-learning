@@ -9,35 +9,25 @@
     * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gap: 20px;
     }
 
     .box {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-      max-width: 1200px;
-      margin: 100px auto;
-      border: 1px solid #000;
+      display: flex;
+      gap: var(--gap);
+      flex-wrap: wrap;
+      width: 1000px;
+      margin: 0 auto;
     }
 
     .box .item {
+      width: calc(16.6666667% - var(--gap));
       height: 120px;
       background-color: pink;
-      border-radius: 18px;
-    }
-
-    .box .item:first-child {
-
-      /* 1 / 3 是1号线到3号线 */
-      /* grid-column: 1 / 3;
-      grid-row: 1 / 3; */
-
-      /* span 2 是跨2个 */
-      grid-column: span 2;
-      grid-row: span 2;
-      height: auto;
-      /* 取消继承的 120px，让高度由 grid-row 决定 */
-
     }
   </style>
 </head>

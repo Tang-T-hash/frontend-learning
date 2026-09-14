@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    body {
+      background: radial-gradient(circle, rgb(138, 156, 197) 50%, rgb(124, 158, 185) 100%);
+    }
+
+    .nav div,
+    ul li {
+      width: 200px;
+      height: 60px;
+      background-color: rgb(222, 227, 230);
+      margin-left: 20px;
+      padding-left: 20px;
+      line-height: 60px;
+      font-size: 18px;
+    }
+
+    ul li {
+      position: relative;
+      transform: translateX(-200px);
+      transition: all 0.5s calc(var(--i) * 0.1s);
+      opacity: 0;
+    }
+
+    .menu:hover~ul li {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="menu">菜单</div>
+    <ul>
+      <li style="--i:0;">主页</li>
+      <li style="--i:1;">关于我们</li>
+      <li style="--i:2;">售后服务</li>
+      <li style="--i:3;">产品介绍</li>
+      <li style="--i:4;">联系我们</li>
+    </ul>
+  </div>
+</body>
+
+</html>
