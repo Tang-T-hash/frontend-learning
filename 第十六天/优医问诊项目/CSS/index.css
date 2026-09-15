@@ -1,0 +1,168 @@
+:root {
+  --text1: #121826;
+  --text2: #3C3E42;
+  --text3: #848484;
+  --text4: #979797;
+  --text5: #C3C3C5;
+  --text-green: #2CB5A5;
+}
+
+.home-header {
+  width: 100%;
+  height: 130px;
+  position: relative;
+  /* background-color: pink; */
+  padding: 15px 15px 0;
+}
+
+
+.home-header::before {
+  content: '';
+  width: 100%;
+  height: 110px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #3ECEC5D8 0%, #26BCC6 100%);
+  border-bottom-left-radius: 100px 20px;
+  border-bottom-right-radius: 100px 20px;
+}
+
+.home-header h2 {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.home-header .search {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 30px);
+  height: 40px;
+  border-radius: 22px;
+  background: #FFFFFF;
+  box-shadow: 0px 7.5px 11px -3.5px #E0ECFAD1;
+  font-size: 13px;
+  color: var(--text4);
+  line-height: 40px;
+  padding-left: 22px;
+}
+
+.home-header h2 {
+  color: #FFFFFF;
+}
+
+.home-header .search img {
+  /* 让图标和文字底线对齐 */
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+}
+
+/* 导航栏制作 */
+.home-nav {
+  padding: 10px 15px;
+}
+
+.home-nav .row {
+  display: flex;
+}
+
+.home-nav .row li {
+  flex: 1;
+  text-align: center;
+}
+
+
+.home-nav .row li img {
+  width: 46px;
+  height: 46px;
+}
+
+.home-nav .row li h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text1);
+  margin-bottom: 2px;
+}
+
+.home-nav .row li p {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text3);
+}
+
+.home-nav .col-4 {
+  margin-top: 20px;
+}
+
+.home-nav .col-4 li img {
+  width: 31px;
+  height: 31px;
+}
+
+.home-nav .col-4 li p {
+  font-size: 13px;
+  color: var(--text2);
+}
+
+/* banner模块制作 */
+.banner {
+  height: 120px;
+  padding: 15px 10px;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+}
+
+/* tabs切换模块 */
+
+
+.tabs-card {
+  position: relative;
+  height: 44px;
+  line-height: 44px;
+}
+
+.home-tabs .tabs-card ul {
+  display: flex;
+}
+
+.tabs-card ul li {
+  padding: 0 20px;
+  font-size: 15px;
+  color: var(--text4);
+}
+
+.tabs-card ul .active {
+  color: var(--text1);
+  font-weight: 600;
+}
+
+.tabs-card .line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text-green);
+  transform: translateX(95px);
+}
+
+body {
+  height: 2000px;
+}
+
+
+.con-item {
+  border-bottom: 1px solid var(--text5);
+  padding: 0 15px;
+}
+
+.con-head {
+  padding: 20px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
