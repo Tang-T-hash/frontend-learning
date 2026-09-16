@@ -9,48 +9,48 @@
 }
 
 body {
-  margin-bottom: 22.6667vw;
+  margin-bottom: 22.6667vmin;
 }
 
 .home-header {
   width: 100%;
-  height: 34.6667vw;
+  height: 34.6667vmin;
   position: relative;
   /* background-color: pink; */
-  padding: 4vw 4vw 0;
+  padding: 4vmin 4vmin 0;
 }
 
 
 .home-header::before {
   content: '';
   width: 100%;
-  height: 29.3333vw;
+  height: 29.3333vmin;
   position: absolute;
   top: 0;
   left: 0;
   background: linear-gradient(180deg, #3ECEC5D8 0%, #26BCC6 100%);
-  border-bottom-left-radius: 26.6667vw 5.3333vw;
-  border-bottom-right-radius: 26.6667vw 5.3333vw;
+  border-bottom-left-radius: 26.6667vmin 5.3333vmin;
+  border-bottom-right-radius: 26.6667vmin 5.3333vmin;
 }
 
 .home-header h2 {
   position: absolute;
-  font-size: 5.3333vw;
+  font-size: 5.3333vmin;
   font-weight: 400;
 }
 
 .home-header .search {
   position: absolute;
   bottom: 0;
-  width: calc(100% - 8vw);
-  height: 10.6667vw;
-  border-radius: 5.8667vw;
+  width: calc(100% - 8vmin);
+  height: 10.6667vmin;
+  border-radius: 5.8667vmin;
   background: #FFFFFF;
-  box-shadow: 0vw 2vw 2.9333vw -0.9333vw #E0ECFAD1;
-  font-size: 3.4667vw;
+  box-shadow: 0vmin 2vmin 2.9333vmin -0.9333vmin #E0ECFAD1;
+  font-size: 3.4667vmin;
   color: var(--text4);
-  line-height: 10.6667vw;
-  padding-left: 5.8667vw;
+  line-height: 10.6667vmin;
+  padding-left: 5.8667vmin;
 }
 
 .home-header h2 {
@@ -60,13 +60,13 @@ body {
 .home-header .search img {
   /* 让图标和文字底线对齐 */
   vertical-align: middle;
-  width: 4.2667vw;
-  height: 4.2667vw;
+  width: 4.2667vmin;
+  height: 4.2667vmin;
 }
 
 /* 导航栏制作 */
 .home-nav {
-  padding: 2.6667vw 4vw;
+  padding: 2.6667vmin 4vmin;
 }
 
 .home-nav .row {
@@ -80,41 +80,41 @@ body {
 
 
 .home-nav .row li img {
-  width: 12.2667vw;
-  height: 12.2667vw;
+  width: 12.2667vmin;
+  height: 12.2667vmin;
 }
 
 .home-nav .row li h3 {
-  font-size: 3.7333vw;
+  font-size: 3.7333vmin;
   font-weight: 600;
   color: var(--text1);
-  margin-bottom: .5333vw;
+  margin-bottom: .5333vmin;
 }
 
 .home-nav .row li p {
-  font-size: 2.9333vw;
+  font-size: 2.9333vmin;
   font-weight: 400;
   color: var(--text3);
 }
 
 .home-nav .col-4 {
-  margin-top: 5.3333vw;
+  margin-top: 5.3333vmin;
 }
 
 .home-nav .col-4 li img {
-  width: 8.2667vw;
-  height: 8.2667vw;
+  width: 8.2667vmin;
+  height: 8.2667vmin;
 }
 
 .home-nav .col-4 li p {
-  font-size: 3.4667vw;
+  font-size: 3.4667vmin;
   color: var(--text2);
 }
 
 /* banner模块制作 */
 .banner {
-  height: 32vw;
-  padding: 4vw 2.6667vw;
+  height: 32vmin;
+  padding: 4vmin 2.6667vmin;
 }
 
 .banner img {
@@ -129,8 +129,8 @@ body {
   position: sticky;
   top: 0;
   background-color: #FFFFFF;
-  height: 11.7333vw;
-  line-height: 11.7333vw;
+  height: 11.7333vmin;
+  line-height: 11.7333vmin;
 }
 
 .home-tabs .tabs-card ul {
@@ -138,8 +138,8 @@ body {
 }
 
 .tabs-card ul li {
-  padding: 0 5.3333vw;
-  font-size: 4vw;
+  padding: 0 5.3333vmin;
+  font-size: 4vmin;
   color: var(--text4);
 }
 
@@ -152,29 +152,29 @@ body {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 5.3333vw;
-  height: .5333vw;
+  width: 5.3333vmin;
+  height: .5333vmin;
   background-color: var(--text-green);
-  transform: translateX(25.3333vw);
+  transform: translateX(25.3333vmin);
 }
 
 
 .con-item {
-  border-bottom: .2667vw solid var(--text5);
-  padding: 5.6vw 4vw 2.1333vw;
+  border-bottom: .2667vmin solid var(--text5);
+  padding: 5.6vmin 4vmin 2.1333vmin;
 }
 
 .con-item .con-head {
-  height: 10.6667vw;
+  height: 10.6667vmin;
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
 
 .con-head .avatar {
-  width: 10.1333vw;
-  height: 10.1333vw;
-  margin-right: 4vw;
+  width: 10.1333vmin;
+  height: 10.1333vmin;
+  margin-right: 4vmin;
 }
 
 .con-head .avatar img {
@@ -184,14 +184,14 @@ body {
 }
 
 .con-head button {
-  width: 17.6vw;
-  height: 7.2vw;
-  border-radius: 3.6vw;
-  border: .2667vw solid var(--text-green);
+  width: 17.6vmin;
+  height: 7.2vmin;
+  border-radius: 3.6vmin;
+  border: .2667vmin solid var(--text-green);
   text-align: center;
-  line-height: 7.2vw;
+  line-height: 7.2vmin;
   color: var(--text-green);
-  font-size: 3.7333vw;
+  font-size: 3.7333vmin;
   background-color: transparent;
 }
 
@@ -201,35 +201,35 @@ body {
 
 .con-head .name {
   flex: 1;
-  font-size: 3.7333vw;
+  font-size: 3.7333vmin;
   color: var(--text2);
-  margin-bottom: 1.3333vw;
+  margin-bottom: 1.3333vmin;
 }
 
 .con-head .hospital {
-  font-size: 3.2vw;
+  font-size: 3.2vmin;
   color: var(--text5);
 }
 
 .con-body .title {
-  font-size: 4.2667vw;
+  font-size: 4.2667vmin;
   color: var(--text1);
-  margin: 2.1333vw 0;
+  margin: 2.1333vmin 0;
   font-weight: 600;
 }
 
 .con-body .tabs {
-  font-size: 3.2vw;
+  font-size: 3.2vmin;
   color: var(--text-green);
-  margin-bottom: 2.1333vw;
+  margin-bottom: 2.1333vmin;
 }
 
 .con-body .info {
-  font-size: 3.7333vw;
+  font-size: 3.7333vmin;
   color: var(--text6);
-  line-height: 6.4vw;
+  line-height: 6.4vmin;
   text-align: left;
-  margin-bottom: 1.6vw;
+  margin-bottom: 1.6vmin;
   /* 多行显示省略号 */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -241,27 +241,27 @@ body {
 .imgs {
   display: flex;
   justify-content: space-between;
-  margin: 2.1333vw 0 4vw;
+  margin: 2.1333vmin 0 4vmin;
 }
 
 .imgs figure {
-  width: 28.2667vw;
-  height: 28.2667vw;
+  width: 28.2667vmin;
+  height: 28.2667vmin;
   margin: 0;
 }
 
 .imgs figure img {
   width: 100%;
   height: 100%;
-  border-radius: 4vw;
+  border-radius: 4vmin;
 
 }
 
 .con-body span {
-  font-size: 3.2vw;
+  font-size: 3.2vmin;
   color: var(--text5);
-  line-height: 5.0667vw;
-  margin-right: 4vw;
+  line-height: 5.0667vmin;
+  margin-right: 4vmin;
 }
 
 /* 页面底部选项卡 */
@@ -270,28 +270,28 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 22.6667vw;
+  height: 22.6667vmin;
   background-color: #fff;
 }
 
 .footer ul {
   display: flex;
-  height: 13.6vw;
+  height: 13.6vmin;
 }
 
 .footer ul li {
   flex: 1;
   text-align: center;
-  padding-top: 3.2vw;
+  padding-top: 3.2vmin;
 }
 
 .footer ul li img {
-  width: 6.6667vw;
-  height: 6.6667vw;
+  width: 6.6667vmin;
+  height: 6.6667vmin;
 
 }
 
 .footer ul li p {
-  font-size: 2.6667vw;
+  font-size: 2.6667vmin;
   color: var(--text6);
 }
