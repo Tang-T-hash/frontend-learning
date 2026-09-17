@@ -1,0 +1,172 @@
+:root {
+  --text1: #121826;
+  --text2: #3C3E42;
+  --text3: #848484;
+  --text4: #C3C3C5;
+  --text5: #D9DBDE;
+  --text-green: #16C2A3;
+  --padding: .4rem;
+}
+
+body {
+  padding-top: 1.1733rem;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  height: 1.1733rem;
+  line-height: 1.1733rem;
+  background-color: #fafafa;
+  /* 添加阴影效果 */
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar .back {
+  color: #000;
+  padding-left: var(--padding);
+}
+
+.nav-bar .back a {
+  color: #000;
+}
+
+.nav-bar .back i {
+  font-size: .48rem;
+}
+
+.nav-bar .register {
+  font-size: .4533rem;
+  color: var(--text-green);
+  padding-right: var(--padding);
+}
+
+.login-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: .6667rem var(--padding) 1.2rem;
+}
+
+.login-header h2 {
+  font-size: .64rem;
+  font-weight: 600;
+  color: var(--text1);
+}
+
+.login-header a {
+  font-size: .4rem;
+  color: var(--text2);
+}
+
+.login-header a i {
+  font-size: .5333rem;
+}
+
+.login-form {
+  padding: 0 var(--padding);
+
+}
+
+.login-form .row {
+  position: relative;
+  padding: var(--padding) 0;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.login-form .row input {
+  font-size: .3733rem;
+}
+
+.login-form .row input::placeholder {
+  color: var(--text4);
+}
+
+.login-form .row img {
+  position: absolute;
+  top: .5333rem;
+  right: var(--padding);
+  width: var(--padding);
+  height: var(--padding);
+}
+
+.login-form .agree {
+  font-size: .3467rem;
+  border-bottom: 0;
+  color: var(--text2);
+}
+
+.login-form .agree i {
+  font-size: .3733rem;
+  color: var(--text4);
+}
+
+.login-form .agree a {
+  color: var(--text-green);
+}
+
+.login-btn {
+  display: block;
+  width: 100%;
+  height: 1.1733rem;
+  font-size: .4267rem;
+  color: var(--text5);
+  border-radius: .5867rem;
+  background: #fafafa;
+  border: 0;
+}
+
+.forget {
+  padding-top: .4rem;
+  text-align: center;
+}
+
+.forget a {
+  font-size: .3733rem;
+  color: var(--text3);
+}
+
+.third-login {
+  width: 5.3333rem;
+  margin: 6.5067rem auto 1.9733rem;
+  text-align: center;
+}
+
+.third-login p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: .48rem;
+  font-size: .4rem;
+  color: var(--text4);
+}
+
+.third-login p span {
+  width: 2.4rem;
+}
+
+
+
+.third-login p::before,
+.third-login p::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--text4);
+}
+
+.third-login a {
+  display: inline-block;
+  margin-top: var(--padding);
+}
+
+.third-login img {
+  width: 1.0667rem;
+  height: 1.0667rem;
+}

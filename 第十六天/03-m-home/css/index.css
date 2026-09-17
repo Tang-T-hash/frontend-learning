@@ -9,56 +9,52 @@
 }
 
 body {
-  margin-bottom: 22.6667vw;
+  padding-bottom: 22.6667vw;
 }
 
 .home-header {
-  width: 100%;
-  height: 34.6667vw;
   position: relative;
+  height: 34.6667vw;
   /* background-color: pink; */
-  padding: 4vw 4vw 0;
+  padding: 8vw 4vw 0;
 }
-
 
 .home-header::before {
   content: '';
-  width: 100%;
-  height: 29.3333vw;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 29.3333vw;
   background: linear-gradient(180deg, #3ECEC5D8 0%, #26BCC6 100%);
-  border-bottom-left-radius: 26.6667vw 5.3333vw;
-  border-bottom-right-radius: 26.6667vw 5.3333vw;
+  /* border-radius: 0 0 5.3333vw 5.3333vw; */
+  border-bottom-left-radius: 40vw 5.3333vw;
+  border-bottom-right-radius: 40vw 5.3333vw;
+
 }
 
-.home-header h2 {
-  position: absolute;
-  font-size: 5.3333vw;
+.home-header h1 {
+  position: relative;
+  font-size: 4.8vw;
+  color: #fff;
   font-weight: 400;
 }
 
 .home-header .search {
   position: absolute;
   bottom: 0;
+  padding-left: 5.6vw;
   width: calc(100% - 8vw);
+  line-height: 10.6667vw;
   height: 10.6667vw;
+  color: var(--text4);
+  font-size: 3.4667vw;
   border-radius: 5.8667vw;
   background: #FFFFFF;
   box-shadow: 0vw 2vw 2.9333vw -0.9333vw #E0ECFAD1;
-  font-size: 3.4667vw;
-  color: var(--text4);
-  line-height: 10.6667vw;
-  padding-left: 5.8667vw;
-}
-
-.home-header h2 {
-  color: #FFFFFF;
 }
 
 .home-header .search img {
-  /* 让图标和文字底线对齐 */
   vertical-align: middle;
   width: 4.2667vw;
   height: 4.2667vw;
@@ -66,7 +62,7 @@ body {
 
 /* 导航栏制作 */
 .home-nav {
-  padding: 2.6667vw 4vw;
+  padding: 6.1333vw 4vw;
 }
 
 .home-nav .row {
@@ -78,27 +74,27 @@ body {
   text-align: center;
 }
 
-
 .home-nav .row li img {
   width: 12.2667vw;
   height: 12.2667vw;
 }
 
+
 .home-nav .row li h3 {
   font-size: 3.7333vw;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text1);
-  margin-bottom: .5333vw;
+  margin-bottom: 1.0667vw;
+
 }
 
 .home-nav .row li p {
   font-size: 2.9333vw;
-  font-weight: 400;
   color: var(--text3);
 }
 
 .home-nav .col-4 {
-  margin-top: 5.3333vw;
+  margin-top: 6.4vw;
 }
 
 .home-nav .col-4 li img {
@@ -114,7 +110,7 @@ body {
 /* banner模块制作 */
 .banner {
   height: 32vw;
-  padding: 4vw 2.6667vw;
+  padding: 2.6667vw 4vw;
 }
 
 .banner img {
@@ -122,25 +118,24 @@ body {
   height: 100%;
 }
 
-/* tabs切换模块 */
+/* tabs切换 */
 
 
 .tabs-card {
   position: sticky;
   top: 0;
-  background-color: #FFFFFF;
-  height: 11.7333vw;
   line-height: 11.7333vw;
+  background-color: #fff;
 }
 
-.home-tabs .tabs-card ul {
+.tabs-card ul {
   display: flex;
 }
 
 .tabs-card ul li {
-  padding: 0 5.3333vw;
-  font-size: 4vw;
+  padding: 0 3.4667vw;
   color: var(--text4);
+  font-size: 3.7333vw;
 }
 
 .tabs-card ul .active {
@@ -155,26 +150,31 @@ body {
   width: 5.3333vw;
   height: .5333vw;
   background-color: var(--text-green);
-  transform: translateX(25.3333vw);
+  transform: translateX(18.6667vw);
 }
 
+.tabs-content {
+  padding: 0 4vw;
+}
 
 .con-item {
+  padding: 5.3333vw 0 4vw;
   border-bottom: .2667vw solid var(--text5);
-  padding: 5.6vw 4vw 2.1333vw;
 }
 
 .con-item .con-head {
-  height: 10.6667vw;
-  align-items: center;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 10.6667vw;
 }
 
+
+
 .con-head .avatar {
-  width: 10.1333vw;
-  height: 10.1333vw;
-  margin-right: 4vw;
+  height: 10.6667vw;
+  height: 10.6667vw;
+  margin-right: 2.6667vw;
 }
 
 .con-head .avatar img {
@@ -186,27 +186,26 @@ body {
 .con-head button {
   width: 17.6vw;
   height: 7.2vw;
-  border-radius: 3.6vw;
+  color: var(--text-green);
   border: .2667vw solid var(--text-green);
   text-align: center;
   line-height: 7.2vw;
-  color: var(--text-green);
-  font-size: 3.7333vw;
-  background-color: transparent;
+  border-radius: 3.6vw;
+  font-size: 2.9333vw;
+  background: transparent;
 }
 
 .con-head .info {
   flex: 1;
 }
 
-.con-head .name {
-  flex: 1;
+.con-head .info .name {
   font-size: 3.7333vw;
   color: var(--text2);
   margin-bottom: 1.3333vw;
 }
 
-.con-head .hospital {
+.con-head .info .desc {
   font-size: 3.2vw;
   color: var(--text5);
 }
@@ -218,18 +217,15 @@ body {
   font-weight: 600;
 }
 
-.con-body .tabs {
+.con-body .tags {
   font-size: 3.2vw;
   color: var(--text-green);
-  margin-bottom: 2.1333vw;
 }
 
 .con-body .info {
   font-size: 3.7333vw;
   color: var(--text6);
   line-height: 6.4vw;
-  text-align: left;
-  margin-bottom: 1.6vw;
   /* 多行显示省略号 */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -241,27 +237,26 @@ body {
 .imgs {
   display: flex;
   justify-content: space-between;
-  margin: 2.1333vw 0 4vw;
+  margin: 2.1333vw 0 2.6667vw;
 }
 
 .imgs figure {
+  overflow: hidden;
   width: 28.2667vw;
   height: 28.2667vw;
+  background-color: pink;
   margin: 0;
+  border-radius: 4vw;
 }
 
 .imgs figure img {
   width: 100%;
   height: 100%;
-  border-radius: 4vw;
-
 }
 
-.con-body span {
+.con-body .logs {
   font-size: 3.2vw;
   color: var(--text5);
-  line-height: 5.0667vw;
-  margin-right: 4vw;
 }
 
 /* 页面底部选项卡 */
@@ -275,20 +270,19 @@ body {
 }
 
 .footer ul {
-  display: flex;
   height: 13.6vw;
+  display: flex;
 }
 
 .footer ul li {
   flex: 1;
   text-align: center;
-  padding-top: 3.2vw;
+  padding-top: 2.6667vw;
 }
 
 .footer ul li img {
-  width: 6.6667vw;
-  height: 6.6667vw;
-
+  width: 4.5333vw;
+  height: 4.8vw;
 }
 
 .footer ul li p {
