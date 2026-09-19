@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // // 1.页面输出1~100
+    // let num = 1
+    // while (num <= 100) {
+    //   document.write(`这是第${num}个数<br>`)
+    //   num++
+    // }
+
+    // 2.计算1~100 的总和并输出
+    // let sum = 0   // 总和变量 sum
+    // let i = 1
+    // while (i <= 100) {
+    //   sum += i
+    //   i++
+    // }
+    // document.write(`1~100 的总和为${sum}`)
+
+    // 3.计算1~100 的 偶数和 并输出
+    // let sum = 0   // 偶数和变量 sum
+    // let i = 1
+    // while (i <= 100) {
+    //   // 筛选偶数
+    //   if (i % 2 === 0) {
+    //     sum += i
+    //   }
+    //   i++
+    // }
+    // document.write(`1~100 的偶数和为${sum}`)
+
+    // 4.计算1~100 的 奇数和 并输出
+    let sum = 0   // 奇数和变量 sum
+    let i = 1
+    while (i <= 100) {
+      // 筛选奇数
+      if (i % 2 === 1) {
+        sum += i
+      }
+      i++
+    }
+    document.write(`1~100 的奇数和为${sum}`)
+  </script>
+</body>
+
+</html>

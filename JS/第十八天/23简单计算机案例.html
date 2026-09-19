@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.用户输入两个数字，然后输入 + - * / 任何一个运算符
+    let num1 = +prompt('请输入第一个数字')
+    let num2 = +prompt('请输入第二个数字')
+    let operator = prompt('请输入 + - * /  其中一个')
+    // 2.根据运算符计算结果
+    switch (operator) {
+      case '+':
+        alert(`你选择的是加法，结果是:${num1 + num2}`)
+        break
+      case '-':
+        alert(`你选择的是减法，结果是:${num1 - num2}`)
+        break
+      case '*':
+        alert(`你选择的是乘法，结果是:${num1 * num2}`)
+        break
+      case '/':
+        alert(`你选择的是除法，结果是:${num1 / num2}`)
+        break
+      default:
+        alert('你输入的运算符有误')
+    }
+  </script>
+</body>
+
+</html>
