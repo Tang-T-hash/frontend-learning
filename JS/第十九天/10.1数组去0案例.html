@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 重点案例
+    let arr = [2, 0, 6, 1, 77, 52, 0, 25, 7]
+    // 1.声明新的空数组
+    let arr2 = []
+    // 2.遍历旧的数组
+    for (i = 0; i < arr.length; i++) {
+      if (arr[i] !== 0) {
+        // 3.满足条件的元素，添加到新的数组中
+        arr2.push(arr[i])
+      }
+    }
+    // 4.输出新的数组
+    document.write(arr2)
+  </script>
+</body>
+
+</html>
