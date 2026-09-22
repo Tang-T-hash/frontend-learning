@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 声明函数时，函数名后面的小括号中，就是函数的形参（形式参数）
+    function getSum(start, end) {
+      let sum = 0
+      for (let i = start; i <= end; i++) {
+        sum += i
+      }
+      console.log(sum);
+    }
+
+    // 调用函数时写在括号中的参数，就是实参（实际参数）
+    getSum(1, 50)      // 计算的是1~50的累加和
+    // 实参（实际参数）
+    getSum(1, 100)      // 计算的是1~100的累加和  
+    // 实参（实际参数）
+    getSum(100, 200)      // 计算的是100~200的累加和
+  </script>
+
+
+</body>
+
+</html>

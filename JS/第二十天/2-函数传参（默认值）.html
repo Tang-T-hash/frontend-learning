@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 给形参的默认值  为 0
+    function getSum(x = 0, y = 0) {
+      document.write(x + y)
+    }
+    getSum(1, 2)     // 结果是3
+    getSum()      // 结果是0
+  </script>
+</body>
+
+</html>

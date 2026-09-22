@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span {
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+      padding: 5px 10px;
+      margin: 2px;
+      border: 1px solid #000;
+      border-radius: 50px;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    function printNineNine() {
+      // 打印九九乘法表
+      // 外循环打印行数
+      for (let i = 1; i <= 9; i++) {
+        // 内循环打印
+        for (let j = 1; j <= i; j++) {
+          document.write(`<span>${j}*${i}=${j * i}</span>`)
+        }
+        // 换行
+        document.write(`<br>`)
+      }
+    }
+    printNineNine()
+    printNineNine()
+    printNineNine()
+  </script>
+</body>
+
+</html>

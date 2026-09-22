@@ -44,37 +44,41 @@
 </head>
 
 <body>
-  <div class="box">
-    <ul>
-      <li><img src="images/1.webp" alt=""></li>
-      <li><img src="images/2.webp" alt=""></li>
-      <li><img src="images/3.webp" alt=""></li>
-      <li><img src="images/4.webp" alt=""></li>
-      <li><img src="images/5.webp" alt=""></li>
-    </ul>
-    <ul>
-      <li><img src="images/6.webp" alt=""></li>
-      <li><img src="images/7.webp" alt=""></li>
-      <li><img src="images/8.webp" alt=""></li>
-      <li><img src="images/9.webp" alt=""></li>
-      <li><img src="images/10.webp" alt=""></li>
-    </ul>
-    <ul>
-      <li><img src="images/1.webp" alt=""></li>
-      <li><img src="images/12.webp" alt=""></li>
-      <li><img src="images/13.webp" alt=""></li>
-      <li><img src="images/14.webp" alt=""></li>
-      <li><img src="images/15.webp" alt=""></li>
-    </ul>
-    <ul>
-      <li><img src="images/16.webp" alt=""></li>
-      <li><img src="images/17.webp" alt=""></li>
-      <li><img src="images/18.webp" alt=""></li>
-      <li><img src="images/19.webp" alt=""></li>
-      <li><img src="images/20.webp" alt=""></li>
-    </ul>
-  </div>
-  <script></script>
+  <ul class="box">
+    <!-- script 塞进 ul，目的就是 让`document.write` 写出的 li 自动成为 ul 的子元素 ，省得再用 JS 去找 ul、再插进去。 -->
+    <script>
+      let arr = [
+        './images/1.webp',
+        './images/2.webp',
+        './images/3.webp',
+        './images/4.webp',
+        './images/5.webp',
+        './images/6.webp',
+        './images/7.webp',
+        './images/8.webp',
+        './images/9.webp',
+        './images/10.webp',
+        './images/11.webp',
+        './images/12.webp',
+        './images/13.webp',
+        './images/14.webp',
+        './images/15.webp',
+        './images/16.webp',
+        './images/17.webp',
+        './images/18.webp',
+        './images/19.webp',
+        './images/20.webp'
+      ]
+      let num = prompt('请输入显示的英雄个数1~20之间：')
+      for (let i = 0; i < num; i++) {
+        document.write(`
+          <li>
+            <img src="${arr[i]}" alt="">
+          </li>
+        `)
+      }
+    </script>
+  </ul>
 </body>
 
 </html>

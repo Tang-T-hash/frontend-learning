@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.求 m~n 的累加和
+    function getSum(m = 0, n = 0) {
+      let sum = 0
+      for (let i = m; i <= n; i++) {
+        sum += i
+      }
+      console.log(sum)
+    }
+
+    let num1 = +prompt(`请输入第一个数字`)
+    let num2 = +prompt(`请输入第二个数字`)
+    // 调用函数
+    getSum(num1, num2)     // 实参可以是变量
+  </script>
+</body>
+
+</html>

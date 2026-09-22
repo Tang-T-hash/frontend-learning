@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.函数名相同，后面覆盖前面的
+    // function fn() {
+    //   console.log(1)
+    // }
+    // function fn() {
+    //   console.log(2)
+    // }
+    // fn()
+    // 2.参数不匹配   
+    function fn(a, b) {
+      console.log(a + b)
+    }
+    // 1.实参多于形参   剩余的实参不参与运算
+    // fn(1, 2, 3)
+    // 2.形参多于实参    剩余的形参为 undefined
+    fn(1)      // 1   +   undefined  =  NaN
+  </script>
+</body>
+
+</html>
