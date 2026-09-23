@@ -14,9 +14,9 @@
       let h = parseInt(time / 60 / 60 % 24)
       let m = parseInt(time / 60 % 60)
       let s = parseInt(time % 60)
-      h < 10 ? h = h + `0` : h
-      m < 10 ? m = m + `0` : m
-      s < 10 ? s = s + `0` : s
+      h = h < 10 ? h = h + `0` : h
+      m = m < 10 ? m = m + `0` : m
+      s = s < 10 ? s = s + `0` : s
       return `转换后时间为${h}时${m}分${s}秒`
     }
 
