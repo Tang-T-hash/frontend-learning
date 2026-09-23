@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 输出第一个结果是1，第二个结果是2
+    function changeNum(x, y) {
+      let temp = x
+      x = y
+      y = temp
+      document.write(`第一个结果是${x} <br>第二个结果是${y}<br>`)
+    }
+    changeNum(1, 2)
+    changeNum('red', 'green')
+  </script>
+</body>
+
+</html>

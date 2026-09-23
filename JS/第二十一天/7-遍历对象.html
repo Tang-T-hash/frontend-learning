@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 数组遍历   不适用
+    // let arr = ['pink', 'red', 'green', 'blue']
+    // for (let k in arr) {
+    //   console.log(k)      // 索引  下标
+    //   console.log(arr[k])  // 元素
+    // }
+
+    // 遍历对象
+    let obj = {
+      uname: '刘德华',
+      age: '50',
+      sex: '男'
+    }
+    for (let k in obj) {
+      console.log(k)        // 打印属性名     k 代表的是属性名字符串 'uname' 'age' 'sex'  所以要用   对象['属性名']
+      console.log(obj[k])   // 打印属性值
+    }
+  </script>
+</body>
+
+</html>

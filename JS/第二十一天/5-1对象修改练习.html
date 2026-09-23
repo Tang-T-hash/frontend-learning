@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.声明对象
+    let goods = {
+      'goods-name': `小米10青春版`,
+      'goods-num': `100012816024`,
+      'goods-weight': `0.55kg`,
+      'goods-address': `中国大陆`
+    }
+    goods.name = `小米10 PLUS`
+    goods.color = `粉色`
+
+
+    // 1.对象名.属性名  goods.name
+    // console.log(goods.name)
+    // 2.查的另外一种方式  对象名['属性名']    适用于属性名是字符串的情况
+    console.log(goods['goods-name'])
+    console.log(goods['goods-num'])
+    console.log(goods['goods-weight'])
+    console.log(goods['goods-address'])
+    console.log(goods.color)
+
+  </script>
+</body>
+
+</html>

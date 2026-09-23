@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        tr {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        table tr:nth-child(1) {
+            background-color: #ddd;
+        }
+
+        table tr:not(:first-child):hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>学生信息</h2>
+    <p>将数据渲染到页面中...</p>
+
+    <table>
+        <caption>学生列表</caption>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>
+        <!-- script写这 -->
+        <script>
+            let arr = [
+                { name: '张三', age: 18, gender: '男', hometown: '河南省' },
+                { name: '李四', age: 19, gender: '女', hometown: '河北省' },
+                { name: '王五', age: 20, gender: '男', hometown: '湖南省' },
+                { name: '王七', age: 21, gender: '女', hometown: '广东省' },
+                { name: '王八', age: 22, gender: '男', hometown: '湖南省' },
+            ]
+            // 2.渲染页面中
+            for (let i = 0; i < arr.length; i++) {
+                document.write(`
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${arr[i].name}</td>
+                        <td>${arr[i].age}</td>
+                        <td>${arr[i].gender}</td>
+                        <td>${arr[i].hometown}</td>
+                    </tr >
+                `)
+
+            }
+        </script>
+
+
+
+    </table>
+</body>
+
+</html>
