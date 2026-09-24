@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 取N ~ M 的随机整数
+    function getRandom(N, M) {
+      return Math.floor(Math.random() * (M - N + 1) + N)
+    }
+    let random = getRandom(1, 10)
+    console.log(random)
+    // 2.设定三次   三次没猜对就直接退出   有明确的次数用  for
+    let flag = true
+    for (let i = 1; i <= 3; i++) {
+      let num = +prompt('请输入1 ~ 10 之间的数字：')
+      if (num > random) {
+        alert('你猜的数字太大了')
+      } else if (num < random) {
+        alert('你猜的数字太小了')
+      } else {
+        flag = false
+        alert('恭喜你猜对了')
+        break
+      }
+    }
+    // 写到for外面
+    if (flag) {
+      alert('次数用完了')
+    }  
+  </script>
+</body>
+
+</html>

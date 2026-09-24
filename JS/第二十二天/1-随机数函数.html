@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 左闭右开   能取到0 但是取不到 1    中间随机一个小数
+    // console.log(Math.random())
+
+    // 随机一个 0-10 之间的整数
+    // console.log(Math.floor(Math.random() * 11))
+
+    // let arr = ['pink', 'red', 'green']
+    // let random = Math.floor(Math.random() * arr.length)
+    // console.log(random)
+    // console.log(arr[random])
+
+    // 取N ~ M 的随机整数
+    function getRandomInt(N, M) {
+      return Math.floor(Math.random() * (M - N + 1) + N)
+    }
+    console.log(getRandomInt(5, 10))
+  </script>
+</body>
+
+</html>
