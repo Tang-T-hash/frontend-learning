@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    // 1. 获取div元素
+    const box = document.querySelector('.box')
+    console.log(box)
+    // 2. 修改div元素的内容     对象.innerText 属性
+    console.log(box.innerText)     // 获取div元素的内容  
+    // box.innerText = 'hello world'   // 修改文字内容
+    box.innerText = '<strong>hello world</strong>'   // 不能解析标签
+  </script>
+</body>
+
+</html>

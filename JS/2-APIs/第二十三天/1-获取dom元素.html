@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="bo"> 111111</p>
+  <ul class="nav">
+    <li>我的首页</li>
+    <li>产品介绍</li>
+    <li>联系我们</li>
+  </ul>
+
+
+  <script>
+    // querySelector()方法：根据选择器获取 第一个 匹配的元素  可以直接操作元素对象
+    // querySelectorAll()方法：根据选择器获取所有匹配的元素，得到的是伪数组 需要遍历操作每一个元素
+
+
+
+    // 1. 获取ul元素
+    // const ul = document.querySelector('.nav')
+    // console.log(ul)
+
+    // 2. 获取li元素
+    const lis = document.querySelectorAll('.nav li')
+    for (let i = 0; i < lis.length; i++) {
+      console.log(lis[i])        //  每一个小li对象
+    }
+
+    const p = document.querySelector('#bo')
+    console.log(p)
+    // p.style.color = 'pink'
+  </script>
+</body>
+
+</html>
