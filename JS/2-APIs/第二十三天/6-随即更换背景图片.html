@@ -5,21 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    body {
+      background: url(images/desktop_1.jpg) no-repeat top center / cover;
+    }
+  </style>
 </head>
 
 <body>
-  <img src="./images/1.webp" alt="">
   <script>
+    // console.log(document.body)
     // 取N ~ M 的随机整数
     function getRandomInt(N, M) {
       return Math.floor(Math.random() * (M - N + 1) + N)
     }
-    // 1.获取图片位置
-    const img = document.querySelector('img')
-    // 2.随机得到序号
-    const random = getRandomInt(1, 6)
-    // 3.修改属性
-    img.src = `./images/${random}.webp`
+    // 随机数
+    const random = getRandomInt(1, 10)
+    document.body.style.backgroundImage = `url(images/desktop_${random}.jpg)`
   </script>
 </body>
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+
+    .nav {
+      background-color: green;
+      /* 被class覆盖了  如果想生效 就要在下面加上      div.className = 'box nav'  */
+    }
+
+    .box {
+      width: 400px;
+      height: 400px;
+      background-color: blue;
+      margin: 30px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav"></div>
+  <script>
+    // 1.获取元素位置
+    const div = document.querySelector('div')
+    // 2.修改类名    class 是个关键字   我们用 className
+    div.className = 'box'
+  </script>
+</body>
+
+</html>
