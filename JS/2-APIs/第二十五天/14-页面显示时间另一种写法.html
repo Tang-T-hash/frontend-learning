@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 40px;
+      border: 1px solid #000;
+      text-align: center;
+      line-height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+  </div>
+  <script>
+    const div = document.querySelector('div')
+    // 获得日期对象
+    const date = new Date()
+    // 显示日期和时间
+    div.innerHTML = date.toLocaleString()
+    setInterval(function () {
+      // 获取当前时间的日期对象
+      const date = new Date()
+      // 每秒更新一次时间
+      div.innerHTML = date.toLocaleString()
+    }, 1000)
+    // div.innerHTML = date.toLocaleDateString()    // 显示日期
+    // div.innerHTML = date.toLocaleTimeString()    // 显示时间
+  </script>
+</body>
+
+</html>

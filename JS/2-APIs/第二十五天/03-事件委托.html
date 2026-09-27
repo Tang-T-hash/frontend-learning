@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>第1个孩子</li>
+    <li>第2个孩子</li>
+    <li>第3个孩子</li>
+    <li>第4个孩子</li>
+    <li>第5个孩子</li>
+    <p>我不是孩子</p>
+  </ul>
+  <script>
+    // 把委托给父级ul  只需要给ul添加事件监听  就可以实现对所有子元素的事件监听
+    // 获取父元素ul
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click', function (e) {
+      //我的需求是  只要点击li 才会有效果
+      if (e.target.tagName === 'LI') {
+        e.target.style.color = 'blue'
+      }
+
+
+    })
+  </script>
+</body>
+
+</html>

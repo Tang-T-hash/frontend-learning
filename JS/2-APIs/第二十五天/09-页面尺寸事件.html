@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      display: inline-block;
+      /* width: 200px; */
+      height: 200px;
+      border: 20px solid red;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>1111111111111111111111111</div>
+  <script>
+    const div = document.querySelector('div')
+    // 不包含border....
+    console.log(div.clientWidth)
+    console.log(div.clientHeight)
+
+    // 页面尺寸事件
+    window.addEventListener('resize', function () {
+      console.log('页面尺寸变化了')
+    })
+  </script>
+</body>
+
+</html>
