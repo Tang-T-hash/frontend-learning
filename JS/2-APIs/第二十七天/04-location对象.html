@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="">
+    <input type="text" name='uname'>
+    <input type="password" name='pwd'>
+    <button>提交</button>
+  </form>
+
+  <a href="#/my">我的</a>
+  <a href="#/friend">关注</a>
+  <a href="#/download">下载</a>
+  <button class="reload">刷新</button>
+
+
+  <script>
+    //search 属性获取地址中携带的参数 ， 符号 ？ 后面部分
+    // document.write(location.search)
+
+    // hash 属性获取地址中的哈希值 符号 # 后面部分   location.hash
+
+    // reload 方法 用来刷新当前页面 传入参数 true 时表示强制刷新
+    const reload = document.querySelector('.reload')
+    reload.addEventListener('click', function () {
+      // location.reload()    f5
+      // 强制刷新           ctrl+f5
+      location.reload(true)
+    })
+  </script>
+</body>
+
+</html>
