@@ -172,32 +172,29 @@
       { id: 1734, name: '王五', age: 20, gender: '男', hometown: '山东省' },
     ]
 
-    // 【1】读：从 localStorage 取数据
-    function loadData() {
-      // getItem 取出来的是【字符串】；如果这个键不存在，返回 null
-      const str = localStorage.getItem('studentList')
+    // ============================================================
+    // 阶段 0 产物 · Step 2：localStorage 读写（回课 130-131，自己重敲）
+    // 目标：数组能存进浏览器，刷新页面后还能读回来
+    // ============================================================
 
-      // 第一次打开时 str 是 null。
-      // 注意：JSON.parse(null) 不会报错，它返回 null —— 但 null 不是数组，
-      // 后面 render() 里 arr.length 就会抛 "Cannot read properties of null"
-      // 所以这里必须先判断：取不到，就直接用默认数据
-      if (str === null) {
-        return defaultArr
-      }
+    // 【1】写一个 loadData 函数：把数据从 localStorage 读出来
+    //     提示：localStorage.getItem('studentList') 拿到的永远是【字符串】
+    //        而且这个键第一次根本不存在，返回的是 null —— 必须处理，否则
+    //        render() 里 arr.length 直接抛 "Cannot read properties of null"
+    //     处理方式二选一：
+    //        A. if 判断 null → return defaultArr（首次打开有 3 条示例数据）
+    //        B. JSON.parse(...) || []（134 集案例的写法，更短，但首次是空表）
 
-      // 取到了：把 JSON 字符串变回数组
-      return JSON.parse(str)
-    }
+    // 【2】再写一个 saveData 函数：把数组存进去
+    //     提示：localStorage 只能存字符串 → 存之前要先 JSON.stringify
+    //        参数名别叫 arr，避免和外面的 arr 撞名
 
-    // 【2】存：把数组写进 localStorage
-    function saveData(list) {
-      // localStorage 只能存字符串，所以先把数组转成 JSON 字符串
-      // 参数名故意用 list 不用 arr，避免跟外面那个 arr 撞名
-      localStorage.setItem('studentList', JSON.stringify(list))
-    }
+    // TODO: 在这里写你的 Step 2 代码（loadData 和 saveData 两个函数）
 
-    // 【3】真身：arr 不再是写死的，改成"从 localStorage 读出来"
-    const arr = loadData()
+    // 【3】真身：arr 必须从浏览器里读，不能写死
+    //     ⚠️ 下面这行现在是临时占位，所以表格是空的 —— 正常！
+    //        Step 2 两个函数写完之后，把 [] 换成 loadData()，这一步不能漏
+    const arr = []
 
     // 获取 tbody 元素
     const tbody = document.querySelector('tbody')
@@ -237,6 +234,40 @@
 
     // ---------- 启动：先渲染一次 ----------
     render()
+
+    // ============================================================
+    // 阶段 0 产物 · Step 3：新增学员
+    // 目标：点「录入」→ 表单的值变成一个新学生对象 → 加进数组 → 存盘 → 重画
+    // ============================================================
+
+    // 【1】先拆一颗隐形炸弹：
+    //     你的 HTML 用的是 <form class="info">，里面的 <button> 默认 type="submit"
+    //     → 一点「录入」，浏览器就会提交表单并【刷新页面】，刚加的数据瞬间消失
+    //     → 所以要监听 form 的 submit 事件，并且函数第一行就阻止它的默认行为
+    //     ⚠️ 绑在 .info 上，事件名是 'submit'，不是 'click'（这是 105 集的内容）
+
+    // 【2】取四个控件的值（class 分别是 .name .age .gender .hometown）
+    //     提示：el.value 才是输入框里的内容；select 也一样用 .value
+    //     ⚠️ 从输入框拿到的年龄一定是【字符串】，比如 "20"
+    //        Step 5 要拿它算平均年龄，字符串没法直接加 → 现在就转成数字
+
+    // 【3】给新学生一个 id
+    //     提示：id 要唯一，而且刷新之后也不能和已有的撞上
+    //         —— 你在 117 集学过一个现成工具，返回一个很大的数字，基本不可能重复
+
+    // 【4】把新学生 push 进 arr
+    //     ⚠️ push 完页面【不会】自己变：DOM 不知道你的数组变了
+    //        必须手动调用上面那个渲染函数，它才会重新画一遍
+
+    // 【5】存盘
+    //     提示：调你 Step 2 写的那个存盘函数，把 arr 传进去
+    //        不存的话，一刷新数据就没了
+
+    // 【6】清空表单
+    //     提示：连 select 一起清掉，form 身上有一个现成方法，一个单词搞定
+    //        如果你只会一个一个 input.value = ''，那样也行，但 select 要单独设回默认
+
+    // TODO: 在这里写你的 Step 3 代码（写完在浏览器里验证一次）
 
     // ========== 下面暂时不用管（Step 4 才做删除） ==========
     // tbody.addEventListener('click', function (e) {

@@ -122,6 +122,7 @@
 <body>
   <h1>新增学员</h1>
   <form class="info" autocomplete="off">
+    <label>学号：<input type="text" class="id" name="id"></label>
     <label>姓名：<input type="text" class="name" name="name"></label>
     <label>年龄：<input type="text" class="age" name="age"></label>
     <label>性别：
@@ -157,22 +158,43 @@
     </tbody>
   </table>
 
+  <!-- ============================================================
+       阶段 0 产物 · Step 5：统计条（HTML 结构自己加，就写在这）
+       参考 134 案例 .title 的做法：一句话 + 两个放数字的标签
+       两块数字各起一个 class（例如 .total / .average），JS 才好取
+       ============================================================ -->
+  <p>总共 <span class="total">0</span> 人，平均年龄 <span class="average">0</span> 岁</p>
+
   <script>
     // ============================================================
     // 阶段 0 产物 · Step 1：静态渲染
     // 目标：把下面 3 条数据渲染到表格里，每行带一个删除按钮
     // ============================================================
 
-    // ---------- 数据层：数组就是"真身" ----------
-    const arr = [
-      { id: 1732, name: '张三', age: 18, gender: '男', hometown: '河南省' },
-      { id: 1733, name: '李四', age: 19, gender: '女', hometown: '河北省' },
-      { id: 1734, name: '王五', age: 20, gender: '男', hometown: '山东省' },
+    // ---------- 数据层 ----------
+
+    // 默认数据：只在"第一次打开"（localStorage 里啥都没有）时用
+    const defaultArr = [
+      {
+        stuId: 1,
+        id: 2451200801,
+        name: '张三',
+        age: 18,
+        gender: '男',
+        hometown: '河南省'
+      }
     ]
 
+    // localStorage.setItem('stuList', JSON.stringify(defaultArr))
+    // 1. 渲染业务
+    // 1.1 先读取本地存储的数据
+    // (1). 本地存储有数据则记得转换为对象然后存储到变量里面，后期用于渲染页面
+    // (2). 如果没有数据，则用 空数组来代替
+    const arr = JSON.parse(localStorage.getItem('stuList')) || []
+    console.log(arr)
     // 获取 tbody 元素
+    //利用map 和 join 渲染到 tbody 里
     const tbody = document.querySelector('tbody')
-
     // ---------- 渲染层：render 函数 ----------
     function render() {
       // 【你的任务 1】
@@ -190,30 +212,130 @@
       //   <td><a href="javascript:" data-id="1732">删除</a></td>
 
       // TODO: 在这里写你的代码
-      tbody.innerHTML = ''
+      // (1)利用map遍历数组，返回对应tr的数组
+      const trArr = arr.map(function (ele, index) {
+        return `
+  <tr>
+    <td>${ele.stuId}</td>
+    <td>${ele.id}</td>
+    <td>${ele.name}</td>
+    <td>${ele.age}</td>
+    <td>${ele.gender}</td>
+    <td>${ele.hometown}</td>
+    <td>
+      <a href="javascript:" data-id="${index}">
+      删除
+      </a>
+      </td>
+  </tr>
+  `
+      })
+      console.log(trArr)
+      // (2)把数组转换为字符串 join
+      //(3) 把生成的字符串赋值给tbody标签
+      tbody.innerHTML = trArr.join('')
+      document.querySelector('.total').innerHTML = arr.length
+      // (3) 计算平均年龄
+      let sum = 0
       for (let i = 0; i < arr.length; i++) {
-        const tr = document.createElement('tr')
-        tr.innerHTML = `
-      <td>${arr[i].id}</td>
-      <td>${arr[i].name}</td>
-      <td>${arr[i].age}</td>
-      <td>${arr[i].gender}</td>
-      <td>${arr[i].hometown}</td>
-      <td><a href="javascript:" data-id="${arr[i].id}">删除</a></td>`
-        tbody.appendChild(tr)
+        // 这里你自己写：把第 i 个人的 age 累加到 sum 上
+        sum += arr[i].age
       }
+      // arr.length 有值 → 除一下；没值 → 给 0
+      document.querySelector('.average').innerHTML = arr.length ? (sum / arr.length).toFixed(2) : 0
 
+
+      // TODO: Step 5 —— 统计的更新也写在这里（render 的最后）
+      // 好处：新增 / 删除只要一重画，统计数字就自动跟着变，不用单独调
     }
 
     // ---------- 启动：先渲染一次 ----------
     render()
 
+
+    // ============================================================
+    // 阶段 0 产物 · Step 3：新增学员
+    // 目标：点「录入」→ 表单的值变成一个新学生对象 → 加进数组 → 存盘 → 重画
+    // ============================================================
+
+    // TODO: 在这里写你的 Step 3 代码（写完在浏览器里验证一次）
+
+    // 2.新增业务
+    const info = document.querySelector('.info')
+    const id = document.querySelector('.id')
+    const name = document.querySelector('.name')
+    const age = document.querySelector('.age')
+    const gender = document.querySelector('.gender')
+    const hometown = document.querySelector('.hometown')
+    // 2.1 form表单注册提交事件，阻止默认行为
+    info.addEventListener('submit', function (e) {
+      e.preventDefault()
+      // 2.2 非空判断
+      if (!id.value || !name.value || !age.value || !hometown.value) {
+        return alert('请填写完整信息')
+      }
+      // 2.3 给 arr 数组追加对象，里面存储 表单获取过来的数据
+      arr.push(
+        {
+          stuId: arr.length ? arr[arr.length - 1].stuId + 1 : 1,
+          id: id.value,
+          name: name.value,
+          age: +age.value,
+          gender: gender.value,
+          hometown: hometown.value
+        }
+      )
+      // 2.4  渲染页面和重置表单 （reset()方法）
+      render()
+      this.reset()
+
+      //2.5 把数组重新存储到本地存储  记得转换为JSON字符串存储
+      localStorage.setItem('stuList', JSON.stringify(arr))
+    })
+
+
     // ========== 下面暂时不用管（Step 4 才做删除） ==========
-    // tbody.addEventListener('click', function (e) {
-    //   if (e.target.tagName === 'A') {
-    //     // 从按钮反查 id → 从数组删掉 → 重画
-    //   }
-    // })
+    // 3.删除业务
+    // 3.1 采用事件委托 给tbody标签注册点击事件
+    tbody.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        // 3.2 得到当前点击的索引号，渲染数据的时候， 动态给 a 链接添加自定义属性 例如 data-id="0"
+        console.log(e.target.dataset.id)
+
+        // 3.3 根据索引号，利用 splice 删除数组这条数据
+        arr.splice(e.target.dataset.id, 1)
+        // 3.4 重新渲染页面
+        render()
+        // 3.5 把最新 arr 数组存入本地存储
+        localStorage.setItem('stuList', JSON.stringify(arr))
+      }
+    })
+
+
+    // ============================================================
+    // 阶段 0 产物 · Step 5：统计（最后一步，写完 = 阶段 0 交付 🎉）
+    // ============================================================
+
+    // ⚠️ 先看清楚：render() 在上面「启动」那里，页面一打开就会被调用一次。
+    //    所以统计要用的元素【不能】只声明在这个最底下 —— const 会报
+    //    "Cannot access 'xxx' before initialization"。两种写法二选一：
+    //      A. 元素获取写在上面元素层（tbody 那两行旁边），更新逻辑写进 render()
+    //      B. 获取 + 更新全部写进 render() 里面（简单粗暴，也能跑）
+
+    // 要显示的两样：
+    //   【1】总人数 = 数组的长度（一行搞定）
+    //   【2】平均年龄 = 所有人的 age 求和 ÷ 人数
+    //       提示：map 取出每条数据的 age → 循环或 reduce 求和
+    //       ⚠️ 数组为空时 length 是 0，直接除会得到 NaN —— 必须特判
+    //          （显示 0 或 '-' 都行）
+
+    // 验收三条（全过 = 阶段 0 产物交付）：
+    //   ① 录入 3 条 → 总人数显示 3
+    //   ② 全部删光 → 平均年龄不出现 NaN
+    //   ③ F12 控制台无红字
+
+    // TODO: 在这里写你的 Step 5 代码（或按方案 A 放到对应位置）
+
   </script>
 </body>
 
