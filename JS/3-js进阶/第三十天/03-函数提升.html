@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // 提升到相同作用域当中
+
+    // 1. 会把所有函数声明提升到当前作用域最前面
+    //2. 只提升函数声明， 不提升函数调用
+
+    // 调用函数
+    // fn()   放上面不报错
+    // 声明函数
+    function fn() {
+      console.log('函数提升')
+    }
+    fn()
+
+
+    // fun()   不存在提升现象 放上面就报错
+    var fun = function () {
+      console.log('函数表达式')
+    }
+    fun()
+    // 函数表达式  必须 先声明和赋值 后调用  否则报错
+  </script>
+</body>
+
+</html>
