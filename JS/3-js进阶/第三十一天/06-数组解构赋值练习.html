@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // const arr = ['海尔', '联想', '小米', '方正']
+    // const [hr, lx, mi, fz] = ['海尔', '联想', '小米', '方正']
+    // console.log(hr)
+    // console.log(lx)
+    // console.log(mi)
+    // console.log(fz)
+
+    // function getValue() {
+    //   return [100, 60]
+    // }
+    // [max, min] = getValue()
+    // console.log(max)
+    // console.log(min)
+
+    //1.变量多 单元值少  undefined
+    // const arr = [1, 2, 3]
+    // const [a, b, c, d] = arr
+    // console.log(a)   //1
+    // console.log(b)   //2
+    // console.log(c)   //3
+    // console.log(d)   //undefined
+
+    console.log('-----------------')
+
+    //1.变量少 单元值多 
+    /*    const arr2 = [5, 6, 7, 8]
+       const [e, f, g] = arr2
+       console.log(e)   //5
+       console.log(f)   //6
+       console.log(g)   //7 */
+
+    //利用剩余参数获取数组的剩余元素
+    // const arr2 = [5, 6, 7, 8]
+    // const [e, f, ...ar] = arr2
+    // console.log(e)   //5
+    // console.log(f)   //6
+    // console.log(ar)   //[7, 8]   真数组
+
+
+    // 防止 undefined 传递
+    // const [a = 0, b = 0] = [1, 2]
+
+    // const [a = 0, b = 0] = []
+    // console.log(a)   //1
+    // console.log(b)   //2
+
+    // 按需导入赋值
+    // const [a, b, , d] = [1, 2, 3, 4]
+    // console.log(a)   //1
+    // console.log(b)   //2
+    // console.log(d)   //4
+
+
+    //多维数组
+    const arr = [1, 2, [3, 4]]
+    // console.log(arr[0])   //1
+    // console.log(arr[1])   //2
+    // console.log(arr[2])  //[3, 4]
+    // console.log(arr[2][0])  //3
+    // console.log(arr[2][1])  //4
+
+    //多维数组解构
+    const [a, b, [c, d]] = arr
+    console.log(a)   //1
+    console.log(b)   //2
+    console.log(c)   //3
+    console.log(d)   //4
+  </script>
+</body>
+
+</html>
