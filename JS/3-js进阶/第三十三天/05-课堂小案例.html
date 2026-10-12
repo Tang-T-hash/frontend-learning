@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    const spec = { size: '40cm*40cm', color: '黑色' }
+    // console.log(Object.values(spec))
+    // 转换为字符串  数组 join('/') 把数组根据分隔符转换为字符串
+    // console.log(Object.values(spec).join('/'))
+    document.querySelector('div').innerHTML = Object.values(spec).join('/')
+  </script>
+</body>
+
+</html>
