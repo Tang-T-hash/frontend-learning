@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.split 把字符串 转换为  数组 和 join() 相反
+    // const str = 'pink, red'
+    // const arr = str.split(',')
+    // console.log(arr)
+
+    // const str2 = '2033-08-01'
+    // const arr2 = str2.split('-')
+    // console.log(arr2)
+
+
+    // 2. 字符串的截取  substring(开始的索引号[， 结束的索引号])
+    //2.1  如果省略 结束的索引  默认取到最后
+    // 2.2  结束的索引不包含想要截取的部分
+    // const arr = '今天又要吃饭了'
+    // console.log(arr.substring(3, 6))
+
+
+    //3. startsWith() 判断是不是以  某个字符 开头
+    // const arr = 'pp今天又要吃饭了, 吃点什么, 去哪吃'
+    // console.log(arr.startsWith('pp'))
+    // console.log(arr.startsWith('吃', 11))
+    // console.log(arr.startsWith('去', 17))
+
+
+
+    //4. includes() 判断是不是包含某个字符    区分大小写
+    const arr = '我是pink老师'
+    console.log(arr.includes('pink'))    // true
+    console.log(arr.includes('pink', 2))   // true
+  </script>
+</body>
+
+</html>
