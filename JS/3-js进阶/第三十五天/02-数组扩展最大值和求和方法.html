@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1. 我们定义的这个方法， 任何一个数组实例对象都可以使用
+    //2.自定义的方法写到  数组.prototype 身上
+    const arr = [2, 5, 9, 10]
+    // 最大值
+    Array.prototype.max = function () {
+      //展开运算符
+      return Math.max(...this)
+      // 原型函数里的this 指向 数组实例对象  arr
+    }
+    console.log(arr.max())
+    console.log([11, 22, 33].max())
+
+    // 最小值
+    Array.prototype.min = function () {
+      return Math.min(...this)
+    }
+    console.log(arr.min())
+    console.log([11, 22, 33].min())
+
+
+    Array.prototype.sum = function () {
+      return this.reduce((prev, item) => prev + item, 0)
+    }
+    console.log([1, 2, 3].sum())
+    console.log([11, 22, 33].sum())
+
+
+
+
+  </script>
+</body>
+
+</html>
