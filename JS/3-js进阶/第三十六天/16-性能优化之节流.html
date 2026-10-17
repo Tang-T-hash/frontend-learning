@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 400px;
+      font-size: 90px;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script src='lodash.min.js'></script>
+  <script>
+    // 利用节流实现性能优化
+    // 需求： 鼠标在盒子上移动，  里面的数字就会变化 + 1
+    const box = document.querySelector('.box')
+    let i = 1
+    function mouseMove() {
+      box.innerHTML = i++
+      // 如果里面存在大量消耗性能的代码，  比如 dom 操作 ，比如数据处理，可能造成卡顿
+    }
+    // box.addEventListener('mousemove', mouseMove)
+
+    // 利用lodash库实现节流 - 3000毫秒之后采取 + 1
+    // 语法： _.throttle(fun, 时间)
+    // box.addEventListener('mousemove', _.throttle(mouseMove, 3000))
+
+
+    // 手写节流函数  每隔500ms + 1
+    // 1. 声明定时器变量
+    //2. 每次 鼠标移动 时都要先判断是否有定时器，  如果有则不开启新定时器
+    // 3.如果没有定时器， 则开启定时器，存入到定时器变量里面
+    //3.1定时器里面调用执行的函数
+    //3.2定时器里面清空定时器
+    function throttle(fn, t) {
+      let timer = null
+      return function () {
+        if (!timer) {
+          timer = setTimeout(function () {
+            fn()
+            // 清空定时器
+            timer = null
+          }, t)
+        }
+      }
+    }
+    box.addEventListener('mousemove', throttle(mouseMove, 500))
+
+
+
+  </script>
+</body>
+
+</html>

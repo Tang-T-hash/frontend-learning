@@ -27,7 +27,7 @@
     const ldh = new Star('刘德华', 50)
     const zxy = new Star('张学友', 50)
     // console.log(ldh === zxy)
-    console.log(ldh.sing === zxy.sing)   // 结果是false 说明 两个对象的sing方法是不同的函数
+    console.log(ldh.sing === zxy.sing)   // // 结果是 true，说明两个实例共享原型上的同一个方法
     // console.dir(Star.prototype)
   </script>
 </body>

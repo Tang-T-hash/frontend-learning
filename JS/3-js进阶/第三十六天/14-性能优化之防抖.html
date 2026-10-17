@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 400px;
+      font-size: 90px;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script src='lodash.min.js'></script>
+  <script>
+    // 利用防抖实现性能优化
+    // 需求： 鼠标在盒子上移动，  里面的数字就会变化 + 1
+    const box = document.querySelector('.box')
+    let i = 1
+    function mouseMove() {
+      box.innerHTML = i++
+      // 如果里面存在大量消耗性能的代码，  比如 dom 操作 ，比如数据处理，可能造成卡顿
+    }
+    //添加事件
+    // box.addEventListener('mousemove', mouseMove)
+
+
+    // 利用 lodash 库实现防抖  - 500毫秒之后 + 1
+    // 语法: _.debounce(fun, 时间)
+    box.addEventListener('mousemove', _.debounce(mouseMove, 500))
+  </script>
+</body>
+
+</html>
