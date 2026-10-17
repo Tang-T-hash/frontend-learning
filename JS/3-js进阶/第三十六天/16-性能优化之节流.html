@@ -44,6 +44,7 @@
     // 3.如果没有定时器， 则开启定时器，存入到定时器变量里面
     //3.1定时器里面调用执行的函数
     //3.2定时器里面清空定时器
+
     function throttle(fn, t) {
       let timer = null
       return function () {
