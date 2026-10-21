@@ -153,21 +153,119 @@
       <td>18</td>
       <td>男</td>
       <td>河南省</td>
-      <td><a href="javascript:" data-id="1732">删除</a></td>
- -->
+      <td><a href="javascript:" data-id="1732">删除</a></td> -->
+
     </tbody>
   </table>
 
-  <!-- ============================================================
-       阶段 0 产物 · Step 5：统计条（HTML 结构自己加，就写在这）
-       参考 134 案例 .title 的做法：一句话 + 两个放数字的标签
-       两块数字各起一个 class（例如 .total / .average），JS 才好取
-       ============================================================ -->
   <p>总共 <span class="total">0</span> 人，平均年龄 <span class="average">0</span> 岁</p>
 
   <script>
+    // const stuList = [
+    //   {
+    //     id: 1732,
+    //     name: "张三",
+    //     age: 18,
+    //     gender: "男",
+    //     hometown: "河南省"
+    //   },
+    //   {
+    //     id: 1733,
+    //     name: "李四",
+    //     age: 19,
+    //     gender: "男",
+    //     hometown: "广东省"
+    //   }
+    //   ,
+    //   {
+    //     id: 1734,
+    //     name: "王五",
+    //     age: 20,
+    //     gender: "男",
+    //     hometown: "广西省"
+    //   }
+    // ]
+    // 读数据：放最前面
+    const arr = JSON.parse(localStorage.getItem('stuList')) || []
+    //获取tbody元素       
+    const tbody = document.querySelector('tbody')
+    // 获取表单元素
+    const info = document.querySelector('.info')
+    const id = document.querySelector('.id')
+    const name = document.querySelector('.name')
+    const age = document.querySelector('.age')
+    const gender = document.querySelector('.gender')
+    const hometown = document.querySelector('.hometown')
+    // 渲染
+    function render() {
+      const newStr = arr.map(function (ele, index) {
+        return `
+<tr>
+  <td>${ele.id}</td>
+      <td>${ele.name}</td>
+      <td>${ele.age}</td>
+      <td>${ele.gender}</td>
+      <td>${ele.hometown}</td>
+      <td><a href="javascript:" data-id="${index}">删除</a></td></tr>`
+      }).join('')
+
+      tbody.innerHTML = newStr
+
+      // 统计：跟着渲染一起更新
+      document.querySelector('.total').innerHTML = arr.length
+      // 计算平均年龄
+      let sum = 0
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i].age
+      }
+      document.querySelector('.average').innerHTML = arr.length ? (sum / arr.length).toFixed(2) : 0
+
+    }
+    // ===== 5. 启动 =====
+    render()
+
+    // 存数据
+    // 如果只写一行：localStorage.setItem('stuList', JSON.stringify(arr))
+    // 那它 只在 页面打开时 执行一次，之后就再也 不会存了 —— 用户新增、删除后，柜子里还是 老数据。
+    function saveData() {
+      localStorage.setItem('stuList', JSON.stringify(arr))
+    }
+    saveData()
+
+    info.addEventListener('submit', function (e) {
+      // 阻止表单默认提交行为
+      e.preventDefault()
+      if (id.value === '' || name.value === '' || age.value === '' || gender.value === '' || hometown.value === '') {
+        return alert('请填写完整信息')
+      }
+
+      arr.push({
+        id: id.value,
+        name: name.value,
+        age: +age.value,
+        gender: gender.value,
+        hometown: hometown.value
+      })
+      render()
+      // 
+      saveData()
+      // 重置表单
+      this.reset()
+    })
 
 
+    // 删除
+    tbody.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        // 3.2 得到当前点击的索引号，渲染数据的时候， 动态给 a 链接添加自定义属性 例如 data-id="0"
+        arr.splice(+e.target.dataset.id, 1)
+        //  重新渲染页面
+        render()
+        //  把最新 arr 数组存入本地存储
+        saveData()
+      }
+    })
+    render()
   </script>
 </body>
 
