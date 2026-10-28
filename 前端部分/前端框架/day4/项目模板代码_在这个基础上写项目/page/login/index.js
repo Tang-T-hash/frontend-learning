@@ -20,6 +20,13 @@ document.querySelector('.btn').addEventListener('click', () => {
   }).then(result => {
     // 1.4 使用 Bootstrap 的 Alert 警告框反馈结果给用户
     myAlert(true, '登陆成功')
+
+    //登录成功后保存，保存 token 令牌字符串到本地，并跳转到内容列表页面
+    localStorage.setItem('token', result.data.token)
+    setTimeout(() => {
+      //登录成功后，延迟 1.5 秒跳转到内容列表页面
+      location.href = '../content/index.html'
+    }, 1500)
     console.log(result)
   }).catch(error => {
     myAlert(false, error.response.data.message)
