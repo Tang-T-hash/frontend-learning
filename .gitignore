@@ -2,3 +2,9 @@ Python部分/
 .trae-html-share-packages/
 *.mp4
 *.mp3
+node_modules
+dist
+.vscode
+*.pem
+*.cer
+*.log
